@@ -12,13 +12,27 @@
  */
 
 return array(
+//    'db' => [
+//        'driver' => 'Pdo',
+//        'dsn' => 'pgsql:dbname=hotel;host=192.168.0.7',
+//        'username' => 'hotel',
+//        'password' => 'BiloKoji12',        
+//        'charset' => 'utf8',
+//    ],
     'db' => [
         'driver' => 'Pdo',
-        'dsn' => 'pgsql:dbname=hotel;host=192.168.0.7',
-        'username' => 'hotel',
+        'dsn' => 'pgsql:dbname=hotel;host=localhost',
+        'username' => 'postgres',
         'password' => 'BiloKoji12',        
         'charset' => 'utf8',
     ],
+//    'db' => [
+//        'driver' => 'Pdo',
+//        'dsn' => 'mysql:dbname=hotel;host=127.0.0.1',
+//        'username' => 'hotel',
+//        'password' => 'BiloKoji12',        
+//        'charset' => 'utf8',
+//    ],
     'service_manager' => [
         'factories' => [
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory'
