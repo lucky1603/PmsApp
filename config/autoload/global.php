@@ -26,7 +26,7 @@ return array(
         'password' => 'BiloKoji12',        
         'charset' => 'utf8',
     ],
-//    'db' => [
+//    'db' => [git 
 //        'driver' => 'Pdo',
 //        'dsn' => 'mysql:dbname=hotel;host=127.0.0.1',
 //        'username' => 'hotel',
