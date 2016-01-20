@@ -15,7 +15,7 @@ $(document).ready(function() {
         fill('#client_id');
     }); 
     
-//    $('.ui-button').button();
+    $('.ui-button').button();
     $('.reservation-date').datepicker();
         
     $('#entity_definition_id').on('change', function(evt) {
@@ -66,7 +66,8 @@ function fill(what) {
         if(id)
         {
            $.get('/pms/entity-definition/preview/' + id, function(data) {
-                $('.attribute-content').html(data); 
+               var table = $(data).find('table');
+                $('.attribute-content').html(table); 
             }); 
         }        
     }
