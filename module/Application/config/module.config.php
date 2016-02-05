@@ -23,6 +23,56 @@ return array(
                     ),
                 ),
             ),
+            'entity-types' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/pms/entity-type',
+                    'defaults' => array(
+                        'controller' => 'Pms\Controller\EntityType',
+                        'action' => 'index',
+                    )
+                ),
+            ),
+            'entity-definitions' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/pms/entity-definition',
+                    'defaults' => array(
+                        'controller' => 'Pms\Controller\EntityDefinition',
+                        'action' => 'index',
+                    )
+                ),
+            ),
+            'entities' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/pms/entity',
+                    'defaults' => array(
+                        'controller' => 'Pms\Controller\Entity',
+                        'action' => 'index',
+                    )
+                ),
+            ),            
+            'reservations' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/pms/reservation',
+                    'defaults' => array(
+                        'controller' => 'Pms\Controller\Reservation',
+                        'action' => 'index',
+                    )
+                ),
+            ),
+            'reports' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => 'pms',
+                    'defaults' => array(
+                        'controller' => 'Pms\Controller\Reports',
+                        'action' => 'completeUsage',
+                    )
+                ),
+            ),            
             'logout' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -73,6 +123,7 @@ return array(
         ),
         'factories' => array(
             'translator' => 'Zend\Mvc\Service\TranslatorServiceFactory',
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
     ),
     'translator' => array(
@@ -112,5 +163,43 @@ return array(
             'routes' => array(
             ),
         ),
+    ),
+    'navigation' => array(
+        'default' => array(
+            array(
+                'label' => 'Home',
+                'route' => 'home',
+            ),
+//            array(
+//                'label' => 'Types',
+//                'route' => 'pms/entity-type',
+//            ),
+//            array(
+//                'label' => 'Definitions',
+//                'route' => 'pms/entity-definition',
+//            ),
+//            array(
+//                'label' => 'Objects',
+//                'route' => 'pms/entity',
+//            ),
+            array(
+                'label' => 'Reservations',
+                'route' => 'reservations',                
+            ),
+            array(
+                'label' => 'Availability',
+                'route' => 'pms/entity',                
+                'action' => 'fullList',
+            ),
+//            array(
+//                'label' => 'Reports',
+//                'route' => 'reports',
+//            ),
+            array(
+                'label' => 'Log Out',
+                'route' => 'logout',
+            ),
+        ),
+        
     ),
 );

@@ -37,10 +37,17 @@
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->basePath('img/rsz_24logo.png') ?>" alt="VDEL"/>&nbsp;<?php echo $this->translate('PMS Manager') ?></a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
+                    <?php echo $this->navigation('navigation')
+                            ->menu()
+                            ->setMinDepth(0)
+                            ->setMaxDepth(0)
+                            ->setUlClass('nav navbar-nav');?>
+                    
+<!--                    <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+                        <li class="active"><a href="<?php echo $this->url('entity-types') ?>"><?php echo $this->translate('Define Types') ?></a></li>
                         <li class="active"><a href="<?php echo $this->url('logout') ?>"><?php echo $this->translate('Logout') ?></a></li>
-                    </ul>
+                    </ul>-->
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
