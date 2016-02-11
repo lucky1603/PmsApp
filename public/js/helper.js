@@ -67,7 +67,7 @@ function fill(what) {
         {
            $.get('/pms/entity-definition/preview/' + id, function(data) {
                var table = $(data).find('table');
-                $('.attribute-content').html(table); 
+                $('div#attribute-content').html(table); 
             }); 
         }        
     }
