@@ -21,7 +21,7 @@ return array(
 //    ],
     'db' => [
         'driver' => 'Pdo',
-        'dsn' => 'pgsql:dbname=hotel;host=localhost',
+        'dsn' => 'pgsql:dbname=hotel_cloud;host=localhost',
         'username' => 'postgres',
         'password' => 'BiloKoji12',        
         'charset' => 'utf8',
