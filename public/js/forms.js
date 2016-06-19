@@ -10,8 +10,8 @@ var model;
 
 $(document).ready(function() {
     var counter = 1;    
-    optionsArea = '<div class="optionsArea"><button id="addButton">Add</button></div>';
-    var optionsEntry = '<div><input type="text" id="val"' + counter + '>value here...</input><input type="text" id="val"'+counter+'>text here...</input><button id="removeEntries">remove</button>';
+    optionsArea = '<div class="optionsArea"><button type="button" id="addButton" class="btn btn-default glyphicon glyphicon-plus">   </button></div>';
+    var optionsEntry = '<div class="option-value"><div class="col-sm-2"><input type="text" id="val"' + counter + '>value here...</input></div><div class="col-sm-2"><input type="text" id="val"'+counter+'>text here...</input></div><button type="button" id="removeEntries" class="btn btn-default glyphicon glyphicon-remove">remove</button></div>';
     $('.attr-type').on('change', function(evt) {
         initEntries();
     });
@@ -30,7 +30,7 @@ function initEntries(attributeModel)
         $('.attr-type').after($(optionsArea));
         $('#addButton').click(function(evt) {
             evt.preventDefault();
-            var optionsEntry = '<div class="option-value"><input type="text" name="val'+counter+'" id="val' + counter + '" value="' + this.value + '"><input type="text" name="text'+counter+'" id="text'+counter+'" value="' + this.text + '"><button class="removeEntries" id="btn'+counter+'">remove</button>';
+            var optionsEntry = '<div class="option-value"><div class="form-group"><div class="col-xs-4"><input type="text" name="val'+counter+'" id="val' + counter + '" class="form-control"></div><div class="col-xs-4"><input type="text" name="text'+counter+'" id="text'+counter+'" class="form-control"></div><button type="button" id="btn'+counter+'" class="removeEntries btn btn-default glyphicon glyphicon-remove">   </button></div></div>';
             $('.optionsArea').append(optionsEntry);
             $('.optionsArea div.option-value button.removeEntries[id="btn'+counter+'"]').on('click', function(evt) {
                 evt.preventDefault();
@@ -44,13 +44,15 @@ function initEntries(attributeModel)
         if(model)
         {
             $.each(model.optionValues, function(idx, val) {                
-                var optionsEntry = '<div class="option-value"><input type="text" name="val'+counter+'" id="val' + counter + '" value="' + this.value + '"><input type="text" name="text'+counter+'" id="text'+counter+'" value="' + this.text + '"><button class="removeEntries" id="btn'+counter+'">remove</button>';                
+                var optionsEntry = '<div class="option-value"><div class="form-group"><div class="col-sm-4"><input type="text" name="val'+counter+'" id="val' + counter + '" value="' + this.value + '" class="form-control"></div><div class="col-sm-4"><input type="text" name="text'+counter+'" id="text'+counter+'" value="' + this.text + '" class="form-control"></div><button type="button" id="btn'+counter+'"class="removeEntries btn btn-default glyphicon glyphicon-remove">   </button></div></div>';                
                 $('.optionsArea').append(optionsEntry);              
                 $('.optionsArea div.option-value button.removeEntries[id="btn'+counter+'"]').on('click', function(evt) {
                     evt.preventDefault();
+                    console.log("clicked");
                     $(evt.target).parent('div').remove();
                     //counter--;
                     $('#counter').val(--counter);
+                    
                 });
                 console.log($('.optionsArea div.option-value button.removeEntries').get(counter - 1));
                 //++counter;      

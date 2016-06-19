@@ -45,3 +45,8 @@ dd {
 a {
     padding-left: 10px;
 }
+
+#addButton {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
